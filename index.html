@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Festival Uai Play · 18 a 23 de janeiro de 2027 · Belo Horizonte</title>
+<meta name="description" content="Cultura pop, games e turismo: o Festival Uai Play transforma BH num tabuleiro vivo. De 18 a 23 de janeiro de 2027, com arena principal no Mercado Central. Entrada solidária: 1 kg de alimento.">
+<meta name="theme-color" content="#000d37">
+<meta property="og:title" content="Festival Uai Play · BH, 18 a 23/01/2027">
+<meta property="og:description" content="A cidade é o nosso tabuleiro. Passaporte Uai Play, Minecraft, cosplay, game shows e a arena principal no Mercado Central.">
+<meta property="og:image" content="img/hero-poster.jpg">
+<link rel="icon" href="img/Logo-festivaluai.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" href="fonts/obesa.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/rosellinda.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css?v=1">
+</head>
+<body>
+
+<!-- LOADER -->
+<div class="loader" id="loader" aria-hidden="true">
+  <img src="img/Logo-festivaluai.png" alt="" class="loader-logo">
+  <div class="loader-bar"><span id="loaderFill"></span></div>
+  <p class="loader-txt">CARREGANDO O MAPA DE BH</p>
+</div>
+
+<!-- HUD -->
+<header class="hud" id="hud">
+  <a href="#topo" class="hud-logo" aria-label="Festival Uai Play, início"><img src="img/Logo-festivaluai.png" alt="Festival Uai Play"></a>
+  <div class="hud-xp" aria-hidden="true">
+    <span class="xp-label">XP</span>
+    <div class="xp-bar"><span id="xpFill"></span></div>
+    <span class="xp-phase" id="xpPhase">FASE 00</span>
+  </div>
+  <nav class="hud-nav" id="nav" aria-label="Seções">
+    <a href="#jornada">Jornada</a>
+    <a href="#atracoes">Atrações</a>
+    <a href="#programacao">Programação</a>
+    <a href="#mercado">Mercado Central</a>
+    <a href="#rede">Influenciadores</a>
+    <a href="#social">Entrada solidária</a>
+    <a href="#contato" class="nav-cta">Seja parceiro</a>
+  </nav>
+  <button class="hud-menu" id="menuBtn" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span></button>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero" id="topo" data-phase="00">
+  <video class="hero-bg" id="heroVideo" autoplay muted loop playsinline preload="auto" poster="img/hero-poster.jpg"></video>
+  <div class="hero-shade"></div>
+  <div class="hero-content">
+    <p class="hero-kicker"><span class="blink">●</span> Belo Horizonte · MG</p>
+    <h1 class="sr-only">Festival Uai Play</h1>
+    <div class="hero-logo">
+      <video id="logoVideo" muted playsinline preload="auto" aria-hidden="true"></video>
+      <img id="logoStatic" src="img/Logo-festivaluai.png" alt="Festival Uai Play" class="is-hidden">
+    </div>
+    <p class="hero-date">18 A 23 DE JANEIRO DE 2027</p>
+    <p class="hero-tag">Cultura, games e turismo: prepare seu passaporte para a maior jornada de BH.</p>
+    <div class="countdown" id="countdown" aria-label="Contagem regressiva para o festival">
+      <div><b data-cd="d">000</b><span>dias</span></div>
+      <div><b data-cd="h">00</b><span>horas</span></div>
+      <div><b data-cd="m">00</b><span>min</span></div>
+      <div><b data-cd="s">00</b><span>seg</span></div>
+    </div>
+    <div class="hero-ctas">
+      <a href="#jornada" class="btn btn-pink">Começar a jornada</a>
+      <a href="#contato" class="btn btn-ghost">Quero patrocinar</a>
+    </div>
+  </div>
+  <a href="#tabuleiro" class="scroll-cue" aria-label="Rolar para baixo"><span>PRESS START</span><i></i></a>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>CULTURA POP</span><img src="img/sparkle.webp" alt=""><span>GAMES</span><img src="img/sparkle.webp" alt=""><span>TURISMO</span><img src="img/sparkle.webp" alt=""><span>COSPLAY</span><img src="img/sparkle.webp" alt=""><span>MINECRAFT</span><img src="img/sparkle.webp" alt=""><span>MERCADO CENTRAL</span><img src="img/sparkle.webp" alt=""><span>PAMPULHA</span><img src="img/sparkle.webp" alt="">
+    <span>CULTURA POP</span><img src="img/sparkle.webp" alt=""><span>GAMES</span><img src="img/sparkle.webp" alt=""><span>TURISMO</span><img src="img/sparkle.webp" alt=""><span>COSPLAY</span><img src="img/sparkle.webp" alt=""><span>MINECRAFT</span><img src="img/sparkle.webp" alt=""><span>MERCADO CENTRAL</span><img src="img/sparkle.webp" alt=""><span>PAMPULHA</span><img src="img/sparkle.webp" alt="">
+  </div>
+</div>
+
+<!-- TABULEIRO -->
+<section class="sec tabuleiro" id="tabuleiro" data-phase="01">
+  <img src="img/brush-2.webp" alt="" class="brush b-tl" data-depth="-.15">
+  <div class="wrap grid-2">
+    <div>
+      <p class="phase">FASE 01 · O MOVIMENTO</p>
+      <h2 class="title">A CIDADE É O<br>NOSSO <em class="script">Tabuleiro</em></h2>
+      <p class="reveal-words big-copy">O Festival Uai Play é muito mais que um evento: é um movimento que ressignifica o turismo em Belo Horizonte. Na alta temporada de férias de janeiro, a capital mineira vira um cenário interativo vivo, conectando cultura pop, tecnologia e o universo gamer aos cartões-postais mais icônicos da cidade, do Mercado Central à Pampulha.</p>
+      <p class="copy">Quebramos a bolha dos eventos de nicho para criar uma celebração acessível e intergeracional, onde famílias, jovens e turistas redescobrem BH através de uma linguagem universal: <strong>o ato de jogar.</strong></p>
+    </div>
+    <div class="tabuleiro-art">
+      <img src="img/skyline-right.webp" alt="Ilustração de Belo Horizonte com Mineirão, igreja da Pampulha e prédios coloridos" class="sky-r" data-depth=".08">
+      <img src="img/peoes.webp" alt="" class="peoes float" data-depth="-.2">
+    </div>
+  </div>
+</section>
+
+<!-- VERSUS -->
+<section class="sec versus" data-phase="02">
+  <div class="wrap">
+    <p class="phase center">FASE 02 · O DESAFIO</p>
+    <h2 class="title center">TURISMO TRADICIONAL <em class="script vs">Vs</em><br>TURISMO GAMIFICADO</h2>
+    <div class="grid-2 versus-grid">
+      <div class="compare" id="compare" style="--pos:50%">
+        <img src="img/turismo-depois.webp" alt="Turista sorrindo com o passaporte digital Uai Play no celular em frente ao Mercado Central" class="cmp-after">
+        <div class="cmp-before"><img src="img/turismo-antes.webp" alt="Casal olhando um mapa de papel, em preto e branco"></div>
+        <span class="cmp-tag tag-x">✕ Passivo</span>
+        <span class="cmp-tag tag-ok">✓ Player</span>
+        <input type="range" min="0" max="100" value="50" aria-label="Comparar turismo tradicional e gamificado" id="cmpRange">
+        <span class="cmp-handle" aria-hidden="true"><i>◀ ▶</i></span>
+      </div>
+      <ol class="versus-list">
+        <li><b>O desafio do turismo passivo</b>Enquanto o turismo tradicional oferece só observação, o público jovem busca interação. Mapas estáticos e roteiros contemplativos não seguram a atenção das novas gerações.</li>
+        <li><b>A solução Uai Play</b>Uma camada de tecnologia sobre o patrimônio histórico. Com o passaporte digital, a visita vira uma jornada competitiva e divertida: o visitante não só vê o lugar, ele interage, cumpre desafios e ganha recompensas.</li>
+        <li><b>O resultado prático</b>A linguagem dos games direciona o fluxo de pessoas. Onde antes passava um visitante, agora tem um player engajado que consome, compartilha nas redes e fica mais tempo no local.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- GAMIFICAÇÃO + MOEDA -->
+<section class="sec gamifica" data-phase="03">
+  <img src="img/brush-5.webp" alt="" class="brush b-tr" data-depth="-.1">
+  <div class="wrap grid-2 rev">
+    <div class="gami-art">
+      <span class="burst burst-pink" aria-hidden="true"></span>
+      <img src="img/mao-app.webp" alt="Mão segurando celular com o app do Passaporte Uai Play aberto no mapa de BH" class="mao" data-depth=".06">
+    </div>
+    <div>
+      <p class="phase">FASE 03 · A MECÂNICA</p>
+      <h2 class="title">GAMIFICAÇÃO<br>DO <em class="script">Turismo</em></h2>
+      <p class="copy">Rompemos as paredes dos eventos tradicionais para fazer de BH o nosso mapa de jogo. O <strong>Passaporte Uai Play</strong> integra o físico e o digital: visitar pontos turísticos históricos e cumprir desafios no Minecraft gera pontuação real, incentivando o fluxo de pessoas e a descoberta da cidade.</p>
+      <div class="moeda-box">
+        <div class="coin-stage" id="coin"><img src="img/moeda.webp" alt="Moeda Uai, com o desenho geométrico da Praça Raul Soares"></div>
+        <div>
+          <h3 class="title sm">MOEDA <em class="script">Uai</em></h3>
+          <p class="copy">Pra recompensar os exploradores, uma moeda exclusiva com o design geométrico da Praça Raul Soares, unindo cultura gamer e patrimônio arquitetônico de BH.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JORNADA (horizontal) -->
+<section class="jornada" id="jornada" data-phase="04">
+  <div class="jornada-pin">
+    <div class="jornada-head wrap">
+      <p class="phase">FASE 04 · A JORNADA DO EXPLORADOR</p>
+      <h2 class="title">O <em class="script">Passaporte</em> UAI PLAY</h2>
+    </div>
+    <div class="jornada-track" id="jTrack">
+      <svg class="j-path" viewBox="0 0 3000 400" preserveAspectRatio="none" aria-hidden="true"><path id="jPath" d="M60 330 C 400 330, 500 120, 800 120 S 1200 300, 1500 260 S 1900 80, 2200 90 S 2700 260, 2960 200" /></svg>
+      <article class="step">
+        <span class="step-n">01</span>
+        <img src="img/mercado-ilustra.webp" alt="Ilustração da fachada do Mercado Central" class="step-img">
+        <h3 class="script">Start</h3>
+        <p>O visitante retira o passaporte, físico ou digital, no Mercado Central.</p>
+      </article>
+      <article class="step">
+        <span class="step-n">02</span>
+        <div class="step-icon">🎯</div>
+        <h3 class="script">Missão</h3>
+        <p>Percorre as Trilhas Play (gastronomia, cultura) e escaneia QR Codes em lojas e pontos turísticos.</p>
+      </article>
+      <article class="step">
+        <span class="step-n">03</span>
+        <div class="step-icon">🏅</div>
+        <h3 class="script">Conquista</h3>
+        <p>Desbloqueia carimbos digitais e acumula pontos.</p>
+      </article>
+      <article class="step">
+        <span class="step-n">04</span>
+        <div class="step-icon">🎁</div>
+        <h3 class="script">Recompensa</h3>
+        <p>Troca pontos por brindes exclusivos e descontos no comércio local.</p>
+      </article>
+    </div>
+    <img src="img/skyline-strip.webp" alt="" class="jornada-sky">
+  </div>
+</section>
+
+<!-- ATRAÇÕES -->
+<section class="sec atracoes" id="atracoes" data-phase="05">
+  <div class="wrap">
+    <p class="phase center">FASE 05 · O CONTEÚDO</p>
+    <h2 class="title center">CONTEÚDO QUE<br><em class="script">Engaja</em> E <em class="script">Viraliza</em></h2>
+    <div class="cards-4">
+      <article class="card tilt c-purple">
+        <div class="card-img burst-frame"><img src="img/minecraft.webp" alt="Cenário do Minecraft com personagens e árvores floridas"></div>
+        <h3>Desafio Minecraft</h3>
+        <p>"Reconstruindo BH": participantes recriam os pontos turísticos digitalmente.</p>
+      </article>
+      <article class="card tilt c-pink">
+        <div class="card-img burst-frame"><img src="img/trilha-geek.webp" alt="Grupo de cosplayers caminhando numa praça com palmeiras"></div>
+        <h3>Trilha Geek</h3>
+        <p>Tours guiados com cosplayers na Praça da Liberdade e no Circuito Pampulha.</p>
+      </article>
+      <article class="card tilt c-blue">
+        <div class="card-img burst-frame"><img src="img/palco.webp" alt="Palco do Festival Uai Play com telões e plateia lotada"></div>
+        <h3>Palco principal</h3>
+        <p>Game shows, concursos de cosplay e quizzes sobre a história da cidade.</p>
+      </article>
+      <article class="card tilt c-orange">
+        <div class="card-img burst-frame"><img src="img/tech.webp" alt="Jovem usando totem interativo com QR Code em frente a uma igreja"></div>
+        <h3>Tech</h3>
+        <p>Totens interativos e realidade aumentada espalhados pelo circuito.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMAÇÃO -->
+<section class="sec programacao" id="programacao" data-phase="06">
+  <img src="img/brush-7.webp" alt="" class="brush b-tl2" data-depth="-.12">
+  <div class="wrap">
+    <p class="phase center">FASE 06 · SELEÇÃO DE FASES</p>
+    <h2 class="title center">CRONOGRAMA <em class="script">2027</em></h2>
+    <div class="levels">
+      <article class="level">
+        <span class="lv">LEVEL 1</span>
+        <div class="lv-day"><b>20</b><em class="script">Quarta</em></div>
+        <p class="lv-month">JAN</p>
+        <p class="lv-time">13H ÀS 20H</p>
+        <p class="lv-place">Mercado Central + Praça do Papa</p>
+        <img src="img/dia-1.webp" alt="Cosplayers reunidos ao ar livre" loading="lazy">
+      </article>
+      <article class="level">
+        <span class="lv">LEVEL 2</span>
+        <div class="lv-day"><b>21</b><em class="script">Quinta</em></div>
+        <p class="lv-month">JAN</p>
+        <p class="lv-time">13H ÀS 20H</p>
+        <p class="lv-place">Parque Ecológico + Pampulha</p>
+        <img src="img/dia-2.webp" alt="Arte de quiz em neon roxo" loading="lazy">
+      </article>
+      <article class="level">
+        <span class="lv">LEVEL 3</span>
+        <div class="lv-day"><b>22</b><em class="script">Sexta</em></div>
+        <p class="lv-month">JAN</p>
+        <p class="lv-time">13H ÀS 20H</p>
+        <p class="lv-place">Circuito da Liberdade + Viaduto Santa Tereza (Sapucaí)</p>
+        <img src="img/dia-3.webp" alt="Jovens pulando de alegria em frente à cidade" loading="lazy">
+      </article>
+      <article class="level boss">
+        <span class="lv">FASE FINAL</span>
+        <div class="lv-day"><b>23</b><em class="script">Sábado</em></div>
+        <p class="lv-month">JAN</p>
+        <p class="lv-time">09H ÀS 18H</p>
+        <p class="lv-place">Festival Uai Play no Mercado Central</p>
+        <img src="img/dia-4.webp" alt="Arte de perguntas e quiz em roxo e amarelo" loading="lazy">
+      </article>
+    </div>
+    <p class="note"><img src="img/sparkle.webp" alt=""> <b>IMPORTANTE:</b> totens com QR Code fixos de 18 a 23/01, das 08h às 18h.</p>
+  </div>
+</section>
+
+<!-- MERCADO CENTRAL -->
+<section class="sec mercado" id="mercado" data-phase="07">
+  <div class="wrap grid-2">
+    <div>
+      <p class="phase">FASE 07 · A ARENA PRINCIPAL</p>
+      <h2 class="title">O CORAÇÃO<br>DO <em class="script">Evento</em></h2>
+      <p class="copy">Onde a história de BH encontra o futuro do entretenimento. O Mercado Central deixa de ser só um ponto turístico e vira a <strong>Arena Principal</strong> do Uai Play: uma fusão inédita entre o polo gastronômico mais icônico da cidade e o universo geek, atraindo jovens e famílias inteiras pro centro das ativações.</p>
+      <p class="addr">📍 Av. Augusto de Lima, 744 · Centro, Belo Horizonte</p>
+      <div class="stats-3">
+        <div><b class="count" data-to="1.3" data-dec="1">0</b><span class="u">MI</span><p>pessoas por mês</p></div>
+        <div><b>+<span class="count" data-to="400">0</span></b><p>lojas</p></div>
+        <div><b class="count" data-to="96">0</b><p>anos de história</p></div>
+      </div>
+      <p class="fonte">Fonte: mercadocentral.com.br</p>
+    </div>
+    <div class="mercado-art">
+      <span class="burst burst-yellow" aria-hidden="true"></span>
+      <span class="burst burst-orange" aria-hidden="true"></span>
+      <div class="mercado-photo burst-frame"><img src="img/mercado.webp" alt="Fachada do Mercado Central de Belo Horizonte" loading="lazy"></div>
+    </div>
+  </div>
+
+  <div class="wrap mapa-block">
+    <div class="mapa-copy">
+      <h3 class="title sm">MAPA ILUSTRATIVO<br>E <em class="script">Localizações</em></h3>
+      <p class="copy">Portões A a E, palco principal, arena de jogos e estações de passaporte. Passe o mouse no mapa pra explorar.</p>
+      <p class="note sm"><img src="img/sparkle.webp" alt=""> Mapa totalmente ilustrativo.</p>
+      <img src="img/palco-3d.webp" alt="Render 3D do palco principal com plateia e telão" class="palco3d" loading="lazy">
+    </div>
+    <div class="mapa-stage" id="mapa">
+      <img src="img/mapa.webp" alt="Mapa ilustrativo em 3D do circuito do festival no Mercado Central" loading="lazy">
+      <span class="gate g-a">PORTÃO A</span><span class="gate g-b">PORTÃO B</span><span class="gate g-c">PORTÃO C</span><span class="gate g-d">PORTÃO D</span><span class="gate g-e">PORTÃO E</span>
+    </div>
+  </div>
+</section>
+
+<!-- PARCERIAS caravana/hospedagem -->
+<section class="sec parcerias" data-phase="08">
+  <div class="wrap">
+    <p class="phase center">FASE 08 · MULTIPLAYER</p>
+    <div class="grid-2 parc">
+      <article class="parc-card">
+        <span class="burst burst-green" aria-hidden="true"></span>
+        <img src="img/onibus.webp" alt="Ônibus de turismo vermelho de dois andares" class="parc-img bus" loading="lazy">
+        <h3 class="title sm">PARCERIA<br><em class="script">Caravana</em></h3>
+        <p class="copy">Conectando o Brasil a BH. Em negociação com operadoras de ônibus, caravanas turísticas exclusivas trazem visitantes de SP, RJ e Bahia direto pro festival.</p>
+      </article>
+      <article class="parc-card">
+        <span class="burst burst-magenta" aria-hidden="true"></span>
+        <img src="img/hotel.webp" alt="Hotel na região central de Belo Horizonte" class="parc-img hotel" loading="lazy">
+        <h3 class="title sm">PARCERIA<br><em class="script">Hospedagem</em></h3>
+        <p class="copy">Conforto a poucos passos da ação. Em negociação com hotéis da região central, o Pacote Uai Play prevê hospedagem com descontos exclusivos pra quem vem jogar.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIÊNCIA -->
+<section class="sec experiencia" data-phase="09">
+  <div class="wrap">
+    <p class="phase center">FASE 09 · REPLAY</p>
+    <h2 class="title center">QUEM JÁ VIVEU ESSA<br><em class="script">experiência</em></h2>
+    <div class="mosaic">
+      <figure class="m1"><img src="img/exp-1.webp" alt="Auditório lotado em evento gamer da Torneio de Jogos" loading="lazy"></figure>
+      <figure class="m2"><img src="img/exp-2.webp" alt="Jovem jogando com óculos de realidade virtual" loading="lazy"></figure>
+      <figure class="m3"><img src="img/exp-3.webp" alt="Cosplayers no palco de evento" loading="lazy"></figure>
+      <figure class="m4"><img src="img/exp-4.webp" alt="Máquinas de fliperama alinhadas" loading="lazy"></figure>
+      <figure class="m5"><img src="img/exp-5.webp" alt="Arena com computadores gamers e jogadores" loading="lazy"></figure>
+      <figure class="m6 badge"><img src="img/festival-geek.webp" alt="Logo do Festival Gamer e Geek, edição Belo Horizonte" loading="lazy"></figure>
+    </div>
+    <div class="proofs">
+      <div><b>+<span class="count" data-to="1200" data-sep="1">0</span></b><p>participantes presenciais</p></div>
+      <div><b>📣</b><p>Forte repercussão orgânica</p></div>
+      <div><b>✔</b><p>Execução impecável</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PÚBLICO -->
+<section class="sec publico" data-phase="10">
+  <div class="wrap">
+    <p class="phase center">FASE 10 · PERSONAGENS</p>
+    <h2 class="title center">QUEM VAMOS<br><em class="script">impactar</em></h2>
+    <div class="chars">
+      <article class="char tilt"><div class="char-img burst-frame"><img src="img/jovens.webp" alt="Jovens jogando videogame" loading="lazy"></div><h3 class="ribbon r-blue">JOVENS (12-30 ANOS)</h3><p>Apaixonados por games e tecnologia</p></article>
+      <article class="char tilt"><div class="char-img burst-frame"><img src="img/familias.webp" alt="Famílias assistindo a uma apresentação" loading="lazy"></div><h3 class="ribbon r-orange">FAMÍLIAS</h3><p>Em busca de lazer cultural</p></article>
+      <article class="char tilt"><div class="char-img burst-frame"><img src="img/turistas.webp" alt="Casal de turistas tirando selfie" loading="lazy"></div><h3 class="ribbon r-pink">TURISTAS</h3><p>De SP, RJ e interior de MG</p></article>
+    </div>
+    <div class="expect">
+      <img src="img/sparkle.webp" alt="">
+      <p><b>EXPECTATIVA:</b> <span class="count" data-to="3000" data-sep="1">0</span> a <span class="count" data-to="5000" data-sep="1">0</span> participantes diretos + <span class="count" data-to="500">0</span> mil de alcance digital.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BH NÚMEROS -->
+<section class="sec bh" data-phase="11">
+  <img src="img/skyline-left.webp" alt="" class="bh-sky l" loading="lazy">
+  <img src="img/skyline-r2.webp" alt="" class="bh-sky r" loading="lazy">
+  <div class="wrap">
+    <p class="phase center">FASE 11 · O MAPA</p>
+    <h2 class="title center">DADOS DEMOGRÁFICOS<br>SOBRE <em class="script">Belo Horizonte</em></h2>
+    <div class="stats-grid">
+      <div class="stat"><b><span class="count" data-to="2.3" data-dec="1">0</span>MI</b><em class="script">Habitantes</em></div>
+      <div class="stat"><b>R$<span class="count" data-to="1.4" data-dec="1">0</span>BI</b><em class="script">Impacto econômico</em></div>
+      <div class="stat"><b><span class="count" data-to="32">0</span> ANOS</b><em class="script">Idade média</em></div>
+      <div class="stat"><b><span class="count" data-to="54">0</span>%</b><em class="script">Buscam cultura</em></div>
+      <div class="stat"><b><span class="count" data-to="15">0</span>MI</b><em class="script">Mercado por ano</em></div>
+      <div class="stat"><b>3º MAIOR</b><em class="script">Polo urbano do Brasil</em></div>
+    </div>
+    <p class="fonte center">Fontes: IBGE, Belotur (2026), UFMG e Mercado Central de BH.</p>
+  </div>
+</section>
+
+<!-- INFLUENCIADORES -->
+<section class="sec rede" id="rede" data-phase="12">
+  <div class="wrap">
+    <div class="rede-head">
+      <div>
+        <p class="phase">FASE 12 · A PARTY</p>
+        <h2 class="title">NOSSA REDE<br>DE <em class="script">Influenciadores</em></h2>
+      </div>
+      <div class="alcance">
+        <span class="burst burst-orange sm" aria-hidden="true"></span>
+        <p><small>ALCANCE DE</small><b>+<span class="count" data-to="400">0</span></b><small>MIL DE SEGUIDORES</small></p>
+      </div>
+    </div>
+    <div class="party">
+      <a class="player" href="https://www.instagram.com/digolagames/" target="_blank" rel="noopener"><img src="img/inf-digolagames.webp" alt="" loading="lazy"><div><h3>Digolagames</h3><p>+118 mil seguidores</p><span>@digolagames</span></div></a>
+      <a class="player" href="https://www.instagram.com/dukechargista/" target="_blank" rel="noopener"><img src="img/inf-duke.webp" alt="" loading="lazy"><div><h3>Duke Chargista</h3><p>+99 mil seguidores</p><span>@dukechargista</span></div></a>
+      <a class="player" href="https://www.instagram.com/juhlets/" target="_blank" rel="noopener"><img src="img/inf-julha.webp" alt="" loading="lazy"><div><h3>Julha</h3><p>+77 mil seguidores</p><span>@juhlets</span></div></a>
+      <a class="player" href="https://www.instagram.com/luisapachecod/" target="_blank" rel="noopener"><img src="img/inf-luisapacheco.webp" alt="" loading="lazy"><div><h3>Luisa Pacheco</h3><p>+49 mil seguidores</p><span>@luisapachecod</span></div></a>
+      <a class="player" href="https://www.instagram.com/isahh_dias/" target="_blank" rel="noopener"><img src="img/inf-isadias.webp" alt="" loading="lazy"><div><h3>Isa Dias</h3><p>+38 mil seguidores</p><span>@isahh_dias</span></div></a>
+      <a class="player" href="https://www.instagram.com/iamcarriet/" target="_blank" rel="noopener"><img src="img/inf-carrie.webp" alt="" loading="lazy"><div><h3>Carrie</h3><p>+13 mil seguidores</p><span>@iamcarriet</span></div></a>
+      <a class="player" href="https://www.instagram.com/deliciasval/" target="_blank" rel="noopener"><img src="img/inf-chefval.webp" alt="" loading="lazy"><div><h3>Chef Valdelícia</h3><p>+6 mil seguidores</p><span>@deliciasval</span></div></a>
+      <a class="player" href="https://www.instagram.com/shirou8d/" target="_blank" rel="noopener"><img src="img/inf-shirou.webp" alt="" loading="lazy"><div><h3>Shirou</h3><p>+5 mil seguidores</p><span>@shirou8d</span></div></a>
+      <a class="player" href="https://www.instagram.com/thecallofnerds/" target="_blank" rel="noopener"><img src="img/inf-callofnerds.webp" alt="" loading="lazy"><div><h3>The Call of Nerds</h3><p>Comunidade nerd</p><span>@thecallofnerds</span></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL -->
+<section class="sec social" id="social" data-phase="13">
+  <div class="wrap">
+    <p class="phase center">FASE 13 · MODO COOPERATIVO</p>
+    <h2 class="title center">COMPROMISSO <em class="script">Social</em> E <em class="script">Ambiental</em></h2>
+    <div class="solidaria">
+      <div class="sol-copy">
+        <h3>ENTRADA SOLIDÁRIA</h3>
+        <p class="copy">Nada de ingresso! A entrada é <strong>1 kg de alimento</strong>, destinado ao Banco de Alimentos de BH.</p>
+      </div>
+      <div class="meta">
+        <div class="meta-top"><span>META DA PARTY</span><b>1.5 TONELADA</b></div>
+        <div class="meta-bar"><span id="metaFill"></span></div>
+        <div class="meta-kgs"><span>0 kg</span><span>500</span><span>1.000</span><span>1.500 kg</span></div>
+      </div>
+    </div>
+    <div class="cards-3">
+      <article class="perk"><span class="perk-ico p-purple">♿</span><h3>EVENTO INCLUSIVO</h3><p>O Mercado Central tem infraestrutura completa: rampas de acesso, banheiros adaptados e sinalização pra receber todo mundo com segurança.</p></article>
+      <article class="perk"><span class="perk-ico p-pink">🤟</span><h3>TRADUÇÃO EM LIBRAS</h3><p>As principais atrações e apresentações do palco terão intérpretes de Libras, democratizando o conteúdo pra comunidade surda.</p></article>
+      <article class="perk"><span class="perk-ico p-orange">🤝</span><h3>EQUIPE DE APOIO</h3><p>Staff dedicado e treinado pra oferecer auxílio e acolhimento a pessoas com deficiência durante todo o evento.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- REALIZAÇÃO -->
+<section class="sec realizacao" data-phase="14">
+  <div class="wrap grid-2">
+    <div class="derik">
+      <div class="derik-frame burst-frame"><img src="img/derik.webp" alt="Derik Dionizio, CEO da Torneio de Jogos" loading="lazy"></div>
+      <p class="derik-name">Derik Dionizio</p>
+    </div>
+    <div>
+      <p class="phase">FASE 14 · O MESTRE DO JOGO</p>
+      <h2 class="title">REALIZAÇÃO E <em class="script">Expertise</em></h2>
+      <p class="copy">CEO da <strong>Torneio de Jogos</strong>, uma das principais produtoras de cultura gamer e geek do Brasil. Já transformou shoppings, escolas, universidades, empresas e arenas em palcos de conexão real, sempre com foco em alto impacto, engajamento genuíno e entrega profissional.</p>
+      <p class="copy">Do palco ao planejamento, da ativação à estratégia digital: projetos completos que colocam a sua marca no centro da cultura pop e gamer. E mais que especialista em eventos, é prova viva de que os games têm o poder de transformar trajetórias.</p>
+      <p class="marcas-t">PRINCIPAIS MARCAS ATENDIDAS:</p>
+      <div class="marcas">
+        <img src="img/mk-lorena.webp" alt="Prefeitura de Lorena, Secretaria de Cultura" loading="lazy">
+        <img src="img/mk-sp.webp" alt="Fomento à Cultura da Periferia, São Paulo Capital da Cultura e Cidade de São Paulo" loading="lazy">
+        <img src="img/mk-rj.webp" alt="Governo do Rio de Janeiro" loading="lazy">
+        <img src="img/mk-franca.webp" alt="Prefeitura de Franca" loading="lazy">
+        <img src="img/mk-itu.webp" alt="Prefeitura de Itu" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section class="contato" id="contato" data-phase="15">
+  <video class="contato-bg" id="endVideo" muted loop playsinline preload="none" poster="img/hero-poster.jpg" aria-hidden="true"></video>
+  <div class="contato-shade"></div>
+  <div class="wrap contato-in">
+    <img src="img/Logo-festivaluai.png" alt="Festival Uai Play" class="end-logo" loading="lazy">
+    <h2 class="title center">FAÇA PARTE DISSO:</h2>
+    <p class="copy center">Patrocínio, cotas, ativações de marca, caravanas e hospedagem. Bora colocar a sua marca no mapa de BH.</p>
+    <div class="contacts">
+      <a class="ct" href="https://wa.me/5512988863985?text=Oi%20Camila!%20Quero%20saber%20sobre%20parcerias%20no%20Festival%20Uai%20Play." target="_blank" rel="noopener">
+        <span class="ct-ico">💬</span><div><b>Camila Moura</b><small>Comercial, parcerias e apoio</small><span>(12) 98886-3985</span></div>
+      </a>
+      <a class="ct" href="https://wa.me/5512988423253?text=Oi%20Derik!%20Vi%20o%20site%20do%20Festival%20Uai%20Play." target="_blank" rel="noopener">
+        <span class="ct-ico">🎮</span><div><b>Derik Dionizio</b><small>Produtor</small><span>(12) 98842-3253</span></div>
+      </a>
+      <a class="ct" href="mailto:contato@torneiodejogos.com.br">
+        <span class="ct-ico">✉</span><div><b>E-mail</b><small>Resposta da produção</small><span>contato@torneiodejogos.com.br</span></div>
+      </a>
+      <a class="ct" href="https://torneiodejogos.com.br" target="_blank" rel="noopener">
+        <span class="ct-ico">🌐</span><div><b>Torneio de Jogos</b><small>Produtora</small><span>torneiodejogos.com.br</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <img src="img/skyline.webp" alt="" class="foot-sky" loading="lazy">
+  <div class="foot-in wrap">
+    <div class="foot-col"><p>PRODUÇÃO:</p><div class="foot-logos"><img src="img/logo-tdj.png" alt="Torneio de Jogos"><img src="img/logo-tdjcorporate.png" alt="Torneio de Jogos Corporate"></div></div>
+    <div class="foot-col"><p>PATROCÍNIO:</p><div class="foot-logos"><img src="img/logo-Teencontroembh.png" alt="Te encontro em BH, Prefeitura de Belo Horizonte"></div></div>
+    <p class="foot-copy">© 2027 Festival Uai Play · 18 a 23 de janeiro · Belo Horizonte/MG</p>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="main.js?v=1"></script>
+</body>
+</html>
